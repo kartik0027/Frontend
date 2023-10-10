@@ -156,7 +156,7 @@ const Profile = ({ user }) => {
         </VStack>
       </Stack>
       <Heading children="Playlist" size={'md'} my="8" />
-      {user.playlist?.length() > 0 && (
+      {user.playlist?.length > 0 && (
         <Stack
           direction={['column', 'row']}
           alignItems={['center']}

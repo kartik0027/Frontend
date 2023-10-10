@@ -5,7 +5,7 @@ export const login = (email, password) => async dispatch => {
   try {
     dispatch({ type: 'loginRequest' });
     const { data } = await axios.post(
-      `${server}/user/login`,
+      `${server}/login`,
       { email, password },
       {
         headers: {
@@ -24,7 +24,7 @@ export const login = (email, password) => async dispatch => {
 export const register = formdata => async dispatch => {
   try {
     dispatch({ type: 'registerRequest' });
-    const { data } = await axios.post(`${server}/user/register`, formdata, {
+    const { data } = await axios.post(`${server}/register`, formdata, {
       headers: {
         'Content-type': 'multipart/form-data',
       },
@@ -40,7 +40,7 @@ export const register = formdata => async dispatch => {
 export const logout = () => async dispatch => {
   try {
     dispatch({ type: 'logoutRequest' });
-    const { data } = await axios.get(`${server}/user/logout`, {
+    const { data } = await axios.get(`${server}/logout`, {
       withCredentials: true,
     });
     // console.log(data);
@@ -53,7 +53,7 @@ export const logout = () => async dispatch => {
 export const loadUser = () => async dispatch => {
   try {
     dispatch({ type: 'loadUserRequest' });
-    const { data } = await axios.get(`${server}/user/getmyprofile`, {
+    const { data } = await axios.get(`${server}/me`, {
       withCredentials: true,
     });
     // console.log(data);

@@ -24,7 +24,7 @@ const Subscribe = ({ user }) => {
   const { error: courseError } = useSelector(state => state.course);
 
   const subscribeHandler = async () => {
-    const { data } = await axios.get(`${server}/razorpaykey`);
+    const { data } = await axios.get(`${server}/razorpayKey`);
     setKey(data.key);
     dispatch(buySubscription());
   };
@@ -38,10 +38,12 @@ const Subscribe = ({ user }) => {
       toast.error(courseError);
       dispatch({ type: 'clearError' });
     }
+   
     if (subscriptionId) {
+      
       const openPopUp = () => {
         const options = {
-          key,
+          key:key,
           name: 'Up Skill',
           description: 'Get access to all premium content',
           image: logo,
