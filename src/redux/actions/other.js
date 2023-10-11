@@ -5,7 +5,7 @@ export const contactUs = (name, email, message) => async dispatch => {
   try {
     dispatch({ type: 'contactRequest' });
     const { data } = await axios.post(
-      `${server}/contact`,
+      `${server}/other/contact`,
       { name, email, message },
       {
         headers: {
@@ -25,7 +25,7 @@ export const courseRequest = (name, email, course) => async dispatch => {
   try {
     dispatch({ type: 'courseRequestRequest' });
     const { data } = await axios.post(
-      `${server}/courserequest`,
+      `${server}/course/courserequest`,
       { name, email, course },
       {
         headers: {
