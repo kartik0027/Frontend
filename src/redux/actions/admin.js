@@ -5,7 +5,7 @@ export const createCourse = formData => async dispatch => {
   try {
     dispatch({ type: 'createCourseRequest ' });
 
-    const { data } = await axios.post(`${server}/createcourse`, formData, {
+    const { data } = await axios.post(`${server}/course/createcourse`, formData, {
       headers: {
         'Content-type': 'multipart/form-data',
       },
@@ -28,7 +28,7 @@ export const deleteCourse = id => async dispatch => {
   try {
     dispatch({ type: 'deleteCourseRequest ' });
 
-    const { data } = await axios.delete(`${server}/course/${id}`, {
+    const { data } = await axios.delete(`${server}/course/deletecourse/${id}`, {
       withCredentials: true,
     });
 
@@ -48,7 +48,7 @@ export const addLecture = (id, formdata) => async dispatch => {
   try {
     dispatch({ type: 'addLectureRequest ' });
 
-    const { data } = await axios.post(`${server}/course/${id}`, formdata, {
+    const { data } = await axios.post(`${server}/course/addcourselectures/:${id}`, formdata, {
       headers: {
         'Content-type': 'multipart/form-data',
       },
@@ -72,7 +72,7 @@ export const deleteLecture = (courseId, lectureId) => async dispatch => {
     dispatch({ type: 'deleteLectureRequest ' });
 
     const { data } = await axios.delete(
-      `${server}/lecture?courseId=${courseId}&lectureId=${lectureId}`,
+      `${server}/course/deletelecture/lecture?courseId=${courseId}&lectureId=${lectureId}`,
       {
         withCredentials: true,
       }
@@ -94,7 +94,7 @@ export const getAllUsers = () => async dispatch => {
   try {
     dispatch({ type: 'getAllUsersRequest ' });
 
-    const { data } = await axios.get(`${server}/admin/users`, {
+    const { data } = await axios.get(`${server}/user/admin/users`, {
       withCredentials: true,
     });
 
@@ -115,7 +115,7 @@ export const updateUserRole = id => async dispatch => {
     dispatch({ type: 'updateUserRoleRequest ' });
 
     const { data } = await axios.put(
-      `${server}/admin/user/${id}`,
+      `${server}/user/admin/users/${id}`,
       {},
       {
         withCredentials: true,
@@ -138,7 +138,7 @@ export const deleteUser = id => async dispatch => {
   try {
     dispatch({ type: 'deleteUserRequest ' });
 
-    const { data } = await axios.delete(`${server}/admin/user/${id}`, {
+    const { data } = await axios.delete(`${server}/user/admin/users/deleteusers/${id}`, {
       withCredentials: true,
     });
 
@@ -158,7 +158,7 @@ export const getDashboardStats = () => async dispatch => {
   try {
     dispatch({ type: 'getAdminStatsRequest ' });
 
-    const { data } = await axios.get(`${server}/admin/stats`, {
+    const { data } = await axios.get(`${server}/other/admin/stats`, {
       withCredentials: true,
     });
 
