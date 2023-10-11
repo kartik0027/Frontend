@@ -21,4 +21,4 @@ const store = configureStore({
 
 export default store;
 
-export const server = 'https://upskill-2f35.onrender.com/';
+export const server = 'https://upskill-2f35.onrender.com';
