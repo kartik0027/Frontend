@@ -7,7 +7,7 @@ export const updateProfile = (name, email) => async dispatch => {
       type: 'updateProfileRequest ',
     });
     const data = await axios.put(
-      `${server}/updateprofile`,
+      `${server}/user/updateprofile`,
       { name, email },
       {
         headers: {
@@ -33,7 +33,7 @@ export const updateProfilePicture = formdata => async dispatch => {
   try {
     dispatch({ type: 'updateProfilePictureRequest' });
     const { data } = await axios.put(
-      `${server}/updateprofilepicture`,
+      `${server}/user/updateprofilepicture`,
       formdata,
       {
         headers: {
@@ -57,7 +57,7 @@ export const changePassword = (oldPassword, newPassword) => async dispatch => {
       type: 'changePasswordRequest ',
     });
     const data = await axios.put(
-      `${server}/changepassword`,
+      `${server}/user/changepassword`,
       { oldPassword, newPassword },
       {
         headers: {
@@ -85,7 +85,7 @@ export const forgetPassword = email => async dispatch => {
       type: 'forgetPasswordRequest',
     });
     const { data } = await axios.post(
-      `${server}/forgetpassword`,
+      `${server}/user/forgetpassword`,
       { email },
       {
         headers: {
@@ -113,7 +113,7 @@ export const resetPassword = (token, password) => async dispatch => {
       type: 'resetPasswordRequest ',
     });
     const { data } = await axios.put(
-      `${server}/resetpassword/${token}`,
+      `${server}/user/resetpassword/${token}`,
       { password },
       {
         headers: {
@@ -139,7 +139,7 @@ export const addToPlaylist = id => async dispatch => {
   try {
     dispatch({ type: 'addToPlaylistRequest ' });
     const { data } = await axios.post(
-      `${server}/addtoplaylist`,
+      `${server}/user/addtoplayist`,
       { id },
       {
         headers: {
@@ -164,7 +164,7 @@ export const removeFromPlaylist = id => async dispatch => {
   try {
     dispatch({ type: 'removeFromPlaylistRequest ' });
     const { data } = await axios.delete(
-      `${server}/removefromplaylist?id=${id}`,
+      `${server}/course/removefromplaylist?id=${id}`,
       {
         withCredentials: true,
       }
@@ -184,7 +184,7 @@ export const removeFromPlaylist = id => async dispatch => {
 export const deleteProfile = () => async dispatch => {
   try {
     dispatch({ type: 'deleteProfileRequest ' });
-    const { data } = await axios.delete(`${server}/me`, {
+    const { data } = await axios.delete(`${server}/user/deletemyProfile`, {
       withCredentials: true,
     });
     dispatch({
