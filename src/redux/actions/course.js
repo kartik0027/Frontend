@@ -7,7 +7,7 @@ export const getAllCourses =
       try {
         dispatch({ type: 'allCoursesRequest ' });
         const { data } = await axios.get(
-          `${server}/courses?keyword=${keyword}&category=${category}`
+          `${server}/course/getALLcourser`
         );
 
         dispatch({
@@ -25,7 +25,7 @@ export const getAllCourses =
 export const getLectures = id => async dispatch => {
   try {
     dispatch({ type: 'getCourseRequest ' });
-    const { data } = await axios.get(`${server}/course/${id}`, {
+    const { data } = await axios.get(`${server}/course/getcourselecture/${id}`, {
       withCredentials: true,
     });
 
