@@ -25,18 +25,13 @@ const Footer = () => {
           color={'white'}
           fontSize={'30'}
         >
-          <a href="https://www.linkedin.com/in/koushikdutta" target={'_blank'}>
+          <a href="https://www.linkedin.com/in/kartik-gamot-a6b27b207/" target={'_blank'}>
             <TiSocialLinkedinCircular />
           </a>
-          <a href="https://github.com/iamkoushik1999" target={'_blank'}>
+          <a href="https://github.com/kart09" target={'_blank'}>
             <TiSocialGithubCircular />
           </a>
-          <a
-            href="https://iamkoushik1999.wixsite.com/iamkoushik1999"
-            target={'_blank'}
-          >
-            <TiWorldOutline />
-          </a>
+         
         </HStack>
       </Stack>
     </Box>
