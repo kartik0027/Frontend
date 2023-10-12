@@ -5,7 +5,7 @@ export const createCourse = formData => async dispatch => {
   try {
     dispatch({ type: 'createCourseRequest ' });
 
-    const { data } = await axios.post(`${server}/course/createcourse`, formData, {
+    const { data } = await axios.post(`${server}/course/createcourser`, formData, {
       headers: {
         'Content-type': 'multipart/form-data',
       },
